@@ -2,7 +2,7 @@ import uuid
 from typing import Optional
 from pydantic import BaseModel, Field
 
-class Book(BaseModel):
+class Product(BaseModel):
     id: str = Field(default_factory=uuid.uuid4, alias="_id")
     title: str = Field(...)
     author: str = Field(...)
@@ -20,7 +20,7 @@ class Book(BaseModel):
         }
 
 
-class BookUpdate(BaseModel):
+class ProductUpdate(BaseModel):
     title: Optional[str]
     author: Optional[str]
     synopsis: Optional[str]
