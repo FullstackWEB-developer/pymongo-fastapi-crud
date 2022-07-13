@@ -109,7 +109,7 @@ classes = ['Automotive',
     'Toys & School Supplies',
     'Watches',
     'Others']
-async def findCategory(name,
+def findCategory(name,
                 description='',
                 tokenizer_file=PICKLE_FILE,
                 model_file=H5_FILE
@@ -155,7 +155,26 @@ async def findCategory(name,
     val = dict(filter(lambda elem: elem[1] > 0.5, sorted_dic.items()))
     # only select first element
     print("~ file: routes.py ~ line 96 ~ val", val)
-    return await list(val.keys())[0]
+    if len(val) > 0:
+        if (predict_category := list(val.keys())[0]) is not None:
+            print(predict_category)
+            return predict_category
+    return ""
+
+# new function multi for loop
+def find_multi_Category(data):
+    categories = []
+    args = data.split('|')
+    # data = args.map(lambda x: categories.append(findCategory(x)))
+    # print("~ file: routes.py ~ data", data)
+    for arg in args: # for each product
+        # with findCategory(arg) as executor:
+        # executor = findCategory(arg)
+        # print("~ file: routes.py ~ executor", executor)
+        categories.append(findCategory(arg))
+    print("~ file: routes.py ~ categories", categories)
+    return categories
+
 
 # output_path = findCategory(input_path,'')
 # output_path = findCategory('Alberta Side Table','')

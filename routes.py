@@ -1,10 +1,11 @@
+import asyncio
 from fastapi import APIRouter, Body, Request, Response, HTTPException, status
 from fastapi.encoders import jsonable_encoder
 from typing import List
 
 from models import Product, ProductUpdate
 
-from Product_Category_Prediction.product_category_prediction_one import findCategory
+from Product_Category_Prediction.product_category_prediction_one import findCategory, find_multi_Category
 
 router = APIRouter()
 
@@ -64,11 +65,13 @@ def delete_product(id: str, request: Request, response: Response):
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Product with ID {id} not found")
 
 # get the product name prediction with request.query_params
-@router.get("/predict/", response_description="Get a single product by name", response_model= str)
+@router.get("/predict/", response_description="Get a single product by name")
 async def predict_product(name: str, request: Request, response: Response):
     # create new function predict_product_name with request.query_params name: productName and return the product name
     # create new function predict_product_name with request.query_params name: productName and return the product name
-    if (predict_category := await findCategory(name)) is not None:
+    # predict_category = asyncio.run(findCategory(name))
+    if len(predict_category := find_multi_Category(name)) > 0:
+        print(predict_category)
         return predict_category
 
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Product with name {name} not found")
