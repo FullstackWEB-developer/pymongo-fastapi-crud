@@ -5,31 +5,11 @@ python-dotenv==0.19.2
 pytest==7.0.1
 
 # re==2.2.0
-# pickle==5.6.3
 # os==3.8.0
 # operator==0.9.8
 
-keras==2.3.1
-# tensorflow==2.3.0
-# tensorflow-probability==0.8.0
-# tensorflow-probability-gpu==0.8.0
-# tensorflow-probability-nccl==0.8.0
-# tensorflow-probability-nccl-gpu==0.8.0
-# tensorflow-probability-nccl-gpu-cuda==0.8.0
-# tensorflow-probability-nccl-gpu-cuda10==0.8.0
-# tensorflow-probability-nccl-gpu-cuda11==0.8.0
-# tensorflow-probability-nccl-gpu-cuda12==0.8.0
-# tensorflow-probability-nccl-gpu-cuda13==0.8.0
-# tensorflow-probability-nccl-gpu-cuda14==0.8.0
-# tensorflow-probability-nccl-gpu-cuda15==0.8.0
-# tensorflow-probability-nccl-gpu-cuda16==0.8.0
-# tensorflow-probability-nccl-gpu-cuda17==0.8.0
-# tensorflow-probability-nccl-gpu-cuda18==0.8.0
-# tensorflow-probability-nccl-gpu-cuda19==0.8.0
-# tensorflow-probability-nccl-gpu-cuda20==0.8.0
-# tensorflow-probability-nccl-gpu-cuda21==0.8.0
-# tensorflow-probability-nccl-gpu-cuda22==0.8.0
-# tensorflow-probability-nccl-gpu-cuda23==0.8.0
-# tensorflow-probability-nccl-gpu-cuda24==0.8.0
-# tensorflow-probability-nccl-gpu-cuda25==0.8.0
-# tensorflow-probability-nccl-gpu
+keras==2.9.0
+tensorflow==2.9.1
+tensorflow-gpu==2.9.1
+
+# pickle5>=0.0.12
