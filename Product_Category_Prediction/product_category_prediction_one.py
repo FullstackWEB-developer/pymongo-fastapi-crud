@@ -15,7 +15,7 @@ from keras.models import load_model
 # Args
 # input_path = sys.argv[1]
 # output_path = sys.argv[2]
-cwd = os.path.dirname(os.path.realpath(__file__)) + "\\"
+cwd = os.path.dirname(os.path.realpath(__file__)) + "/"
 
 H5_FILE = cwd + "model-neural-net-only-name.h5"
 PICKLE_FILE = cwd + "tokenizer-only-name.pickle"
