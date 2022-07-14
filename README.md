@@ -43,3 +43,19 @@ python -m pytest
 ## Disclaimer
 
 Use at your own risk; not a supported MongoDB product
+
+## For deploy on ubuntu 22
+
+Note:
+https://www.travisluong.com/how-to-deploy-fastapi-with-nginx-and-pm2/
+
+python > 3.10.5
+```
+pip2 install -r requirements.txt
+```
+```
+
+```
+```
+pm2 start "python3 -m uvicorn main:app --reload" --name alys
+```
